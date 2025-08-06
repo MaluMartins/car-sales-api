@@ -1,6 +1,7 @@
 package com.store.car.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -23,8 +24,9 @@ public class CarPostServiceImpl implements CarPostService {
 
 	@Override
 	public void newPostDetails(CarPostDTO carPostDTO) {
-		// TODO Auto-generated method stub
+		CarPostEntity carPostEntity	= mapCarDtoToEntity(carPostDTO);
 		
+		carPostRepository.save(carPostEntity);
 	}
 
 	@Override
@@ -72,6 +74,26 @@ public class CarPostServiceImpl implements CarPostService {
 				.build();
 	}
 	
+	private CarPostEntity mapCarDtoToEntity(CarPostDTO carPostDTO) {
+		CarPostEntity carPostEntity = new CarPostEntity();
+		
+		ownerPostRepository.findById(carPostDTO.getOwnerId()).ifPresentOrElse(item -> {
+			carPostEntity.setOwnerPost(item);
+			carPostEntity.setContact(item.getContactNumber());
+		}, () -> {
+			throw new RuntimeException();
+		});
+		
+		carPostEntity.setBrand(carPostDTO.getBrand());
+		carPostEntity.setCity(carPostDTO.getCity());
+		carPostEntity.setCreatedDate(String.valueOf(new Date()));
+		carPostEntity.setDescription(carPostDTO.getDescription());
+		carPostEntity.setEngine(carPostDTO.getEngineVersion());
+		carPostEntity.setModel(carPostDTO.getModel());
+		carPostEntity.setPrice(carPostDTO.getPrice());
+		
+		return carPostEntity;
+	}
 	
 	
 	

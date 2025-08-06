@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.portal</groupId>
-	<artifactId>apiCarros</artifactId>
+	<artifactId>car-main-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>apiCarros</name>
 	<description>Portal de vendas de carros</description>

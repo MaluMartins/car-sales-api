@@ -11,7 +11,7 @@
 	<groupId>com.store</groupId>
 	<artifactId>car</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>car</name>
+	<name>car-api</name>
 	<description>car store service</description>
 	<url/>
 	<licenses>
