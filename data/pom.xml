@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.5.3</version>
+		<version>3.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.store</groupId>
-	<artifactId>car</artifactId>
+	<groupId>com.analytics</groupId>
+	<artifactId>data</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>car-api</name>
-	<description>car store service</description>
+	<name>data</name>
+	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -75,7 +75,7 @@
 						<path>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
-							<version>1.18.38</version> 
+							<version>1.18.38</version>
 						</path>
 					</annotationProcessorPaths>
 				</configuration>
